@@ -1,0 +1,245 @@
+@font-face {
+  font-family: 'NotoSans';
+  src: url('./assets/fonts/static/NotoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Light Theme */
+:root {
+  --bg-color: #edf4fa;
+  --card-bg: #ffffff;
+  --text-color: #061a40;
+  --subtle-text-color: #5c6b81;
+  --primary-color: #f54545;
+  --btn-text-color: #ffffff;
+  --border-color: #d5d5d5;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --toggle-inactive: #e4e4e4;
+  --toggle-active: #f54545;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #0c0f1d;
+  --card-bg: #1c2333;
+  --text-color: #ffffff;
+  --subtle-text-color: #cccccc;
+  --primary-color: #f54545;
+  --btn-text-color: #ffffff;
+  --border-color: #3a4050;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --toggle-inactive: #888c94;
+  --toggle-active: #f54545;
+}
+
+body {
+  font-family: 'NotoSans', 'sans-serif';
+  margin: 1rem 8rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  @media screen and (max-width: 768px) {
+    margin: 1rem 3rem;
+    .box{
+      width: 100%;
+    }
+  }
+}
+
+/* Top Bar */
+#toggle {
+  display: flex;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px var(--shadow-color);
+  margin: 2rem 0 3rem 0;
+  background-color: var(--card-bg);
+  justify-content: space-between;
+
+  .logo {
+    width: 10rem;
+    fill: var(--text-color);
+  }
+}
+
+#theme-toggle {
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--toggle-inactive);
+  cursor: pointer;
+  padding: 0.6rem;
+  margin: 0;
+}
+
+#toggle-logo {
+  height: 1.5rem;
+  margin: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 700;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05rem;
+  flex-wrap: wrap;
+
+  button {
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 6px var(--shadow-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.5rem 0.8rem;
+  }
+
+  button:hover {
+    background-color: var(--primary-color);
+    color: var(--btn-text-color);
+    cursor: pointer;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.active-btn {
+  background-color: var(--primary-color);
+  color: var(--btn-text-color);
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  background-color: white;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggle-inactive);
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 1px;
+  top: 1px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--toggle-active);
+}
+
+input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+/* Extensions Container */
+#extensions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* Extension Box */
+.box {
+  background-color: var(--card-bg);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  width: 18rem;
+  height: 10rem;
+  box-shadow: 0 2px 6px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .cover-box {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+
+    .right-box {
+      width: 70%;
+
+      h4 {
+        margin: 0;
+        font-weight: bolder;
+        color: var(--text-color);
+      }
+
+      p {
+        margin: 0;
+        margin-top: 0.4rem;
+        font-size: 0.8em;
+        color: var(--subtle-text-color);
+      }
+    }
+  }
+
+  .bottom-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      border-radius: 1rem;
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 0.8rem;
+      background-color: var(--white-color);
+      font-weight: 500;
+      color: var(--text-color);
+      /* color: var(--btn-text-color); */
+    }
+
+    button:hover {
+      background-color: var(--primary-color);
+      color: var(--card-bg);
+      cursor: pointer;
+    }
+  }
+}
+
+/* Footer */
+.attribution {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  color: var(--subtle-text-color);
+}

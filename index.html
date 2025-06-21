@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Browser extensions manager UI</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section id="hero">
+    <div id="toggle">
+      <img class="logo" src="./assets/images/logo.svg">
+      <button id="theme-toggle">
+        <img id="toggle-logo" src="./assets/images/icon-moon.svg">
+      </button>
+    </div>
+    <header>
+      Extensions List
+      <div class="filters">
+        <button class="header-btn active-btn">All</button>
+        <button class="header-btn">Active</button>
+        <button class="header-btn">Inactive</button>
+      </div>
+    </header>
+  </section>
+
+  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+  <section id="extensions">
+    
+  </section>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="https://richa-anand.netlify.app">Richa Anand</a>.
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>
