@@ -16,7 +16,7 @@ A fully functional, responsive UI built with vanilla HTML, CSS, and JavaScript, 
 - data.js holds an array of browser extension objects.
 - On page load, index.js dynamically renders each extension as a card using DOM manipulation.
 - Users can:
-  -Toggle enabled/disabled status for each extension
+  - Toggle enabled/disabled status for each extension
   - Remove an extension from the list
   - Switch between light and dark themes
 - All functionality is handled on the frontend (no backend or database).
